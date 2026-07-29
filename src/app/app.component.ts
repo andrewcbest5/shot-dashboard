@@ -1,15 +1,12 @@
-import { Component } from '@angular/core';
-import { inject } from '@angular/core';
-import { ShotDataService } from './services/shot-data.service';
+import { Component, inject} from '@angular/core';
+import { ShotScatterComponent } from './shot-scatter/shot-scatter.component';
+import {ShotDataService} from "./services/shot-data.service";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [ShotScatterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'shot-dashboard';
-  shotData = inject(ShotDataService);
 }
