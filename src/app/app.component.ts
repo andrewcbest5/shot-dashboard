@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { inject } from '@angular/core';
+import { ShotDataService } from './services/shot-data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +11,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shot-dashboard';
+  shotData = inject(ShotDataService);
 }
