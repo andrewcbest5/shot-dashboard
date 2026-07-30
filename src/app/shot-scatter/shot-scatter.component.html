@@ -26,7 +26,7 @@
     stroke-width="0.2"
   />
 
- @for (shot of shotData.shots(); track $index) {
+ @for (shot of filteredShots(); track $index) {
   <circle
     [attr.cx]="shot.y"
     [attr.cy]="-shot.x"
@@ -35,3 +35,4 @@
   />
 }
 </svg>
+

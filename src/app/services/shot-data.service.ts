@@ -74,42 +74,41 @@ export class ShotDataService {
 
 
   private toShot(row: ShotCsvRow): Shot {
-    const x = Number(row.x);
-    const y = Number(row.y);
+  const x = Number(row.x);
+  const y = Number(row.y);
 
-    return {
-      shooterId: row.shooter_id,
-      shooterName: row.shooter_name,
-      date: new Date(Number(row.year), Number(row.month) - 1, Number(row.day)),
+  return {
+    shooterId: row.shooter_id,
+    shooterName: row.shooter_name,
+    date: new Date(Number(row.year), Number(row.month) - 1, Number(row.day)),
 
-      period: Number(row.period),
-      startGameClock: Number(row.start_game_clock),
-      endGameClock: Number(row.end_game_clock),
-      shotClock: Number(row.shot_clock),
+    period: Number(row.period),
+    startGameClock: Number(row.start_game_clock),
+    endGameClock: Number(row.end_game_clock),
+    shotClock: Number(row.shot_clock),
 
-      x, y,
-      passerX: row.passer_x ? Number(row.passer_x) : null,
-      passerY: row.passer_y ? Number(row.passer_y) : null,
+    x, y,
+    passerX: row.passer_x ? Number(row.passer_x) : null,
+    passerY: row.passer_y ? Number(row.passer_y) : null,
 
-      outcome: row.outcome === 'true',
-      assisted: row.assisted === 'true',
-      astOpp: row.ast_opp === 'true',
-      blocked: row.blocked === 'true',
-      fouled: row.fouled === 'true',
+    outcome: row.outcome?.toLowerCase() === 'true',
+    assisted: row.assisted?.toLowerCase() === 'true',
+    astOpp: row.ast_opp?.toLowerCase() === 'true',
+    blocked: row.blocked?.toLowerCase() === 'true',
+    fouled: row.fouled?.toLowerCase() === 'true',
 
-      shotType: row.shot_type as Shot['shotType'],
-      complexShotType: row.complex_shot_type as Shot['complexShotType'],
+    shotType: row.shot_type as Shot['shotType'],
+    complexShotType: row.complex_shot_type as Shot['complexShotType'],
 
-      contested: row.contested === 'true',
-      contestLevel: row.contest_level as Shot['contestLevel'],
+    contested: row.contested?.toLowerCase() === 'true',
+    contestLevel: row.contest_level as Shot['contestLevel'],
 
-      catchAndShoot: row.catch_and_shoot === 'true',
-      dribblesBefore: Number(row.dribbles_before),
+    catchAndShoot: row.catch_and_shoot?.toLowerCase() === 'true',
+    dribblesBefore: Number(row.dribbles_before),
 
-      // derived once, here — never recomputed downstream
-      derivedIsThree: isThreePointAttempt(x, y),
-    };
-  }
+    derivedIsThree: isThreePointAttempt(x, y),
+  };
+}
 
   
 }
