@@ -1,3 +1,21 @@
-<app-shot-scatter></app-shot-scatter>
-<app-scatter-filters></app-scatter-filters>
-<app-summary-table></app-summary-table> 
+<!-- app.component.html -->
+<div class="dashboard">
+  <header class="dashboard-header">
+    <h1>Shot Profile</h1>
+    <p class="subtitle">Player-level shot chart &amp; efficiency breakdown</p>
+  </header>
+
+  <div class="dashboard-body">
+    <main class="chart-area">
+      <app-shot-scatter></app-shot-scatter>
+    </main>
+
+    <aside class="filters-area">
+      <app-scatter-filters></app-scatter-filters>
+    </aside>
+
+    <div class="stats-area">
+      <app-summary-table></app-summary-table>
+    </div>
+  </div>
+</div>

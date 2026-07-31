@@ -1,0 +1,42 @@
+// app.component.scss
+.dashboard {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 24px 32px;
+}
+
+.dashboard-header {
+  margin-bottom: 18px;
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    color: var(--ink-muted);
+    font-size: 12px;
+    margin-top: 2px;
+  }
+}
+
+.dashboard-body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+}
+
+.chart-area {
+  grid-column: 1;
+  grid-row: 1 / 3;   // spans both rows
+}
+
+.filters-area {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.stats-area {
+  grid-column: 2;
+  grid-row: 2;
+}

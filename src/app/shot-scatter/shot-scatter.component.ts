@@ -1,6 +1,6 @@
-import { Component, inject, computed} from '@angular/core';
+// shot-scatter.component.ts
+import { Component, inject, computed } from '@angular/core';
 import { ShotDataService } from '../services/shot-data.service';
-import { effect } from '@angular/core';
 import { FilterStateService } from '../services/filter-state.service';
 import { filterShots } from '../util/shot.filter.util';
 
@@ -12,14 +12,18 @@ import { filterShots } from '../util/shot.filter.util';
   styleUrl: './shot-scatter.component.scss'
 })
 export class ShotScatterComponent {
-    shotData = inject(ShotDataService);
-    filterState = inject(FilterStateService);
-    filteredShots = computed(() =>
-      filterShots(this.shotData.shots(), this.filterState.criteria())
-    );
-    constructor() {
-    this.shotData.shots(); 
-  }
+  private readonly shotData = inject(ShotDataService);
+  private readonly filterState = inject(FilterStateService);
 
+  protected readonly filteredShots = computed(() =>
+    filterShots(this.shotData.shots(), this.filterState.criteria())
+  );
+
+  protected readonly chartTitle = computed(() => {
+    const playerId = this.filterState.criteria().playerId;
+    if (!playerId) return 'All Players';
+
+    const match = this.shotData.shots().find((s) => s.shooterId === playerId);
+    return match ? match.shooterName : 'All Players';
+  });
 }
-

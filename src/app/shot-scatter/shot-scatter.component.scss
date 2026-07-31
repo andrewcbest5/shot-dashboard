@@ -1,0 +1,68 @@
+// shot-scatter.component.scss
+.chart-panel {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px;
+  width: 560px;   // up from 420px
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background: var(--surface);
+  border-radius: 4px;
+  display: block;
+}
+
+// shot-scatter.component.scss (add to existing file)
+.legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.swatch {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.swatch.make {
+  background: var(--accent);
+}
+
+.swatch.miss {
+  background: var(--accent-cold);
+}
+
+// shot-scatter.component.scss (add to existing file)
+.chart-title {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.miss-marker line {
+  stroke: var(--accent-cold);
+  stroke-width: 0.15;
+  stroke-linecap: round;
+}
+
+.legend-x {
+  color: var(--accent-cold);
+  font-size: 11px;
+  font-weight: 600;
+}

@@ -9,6 +9,7 @@ import { SummaryTableComponent } from './summary-table/summary-table.component';
   standalone: true,
   imports: [ShotScatterComponent, ScatterFiltersComponent, SummaryTableComponent],
   templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
 })
 export class AppComponent {
 }

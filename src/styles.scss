@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface-raised: #1c2430;
+  --line: #30363d;
+  --court-line: #c9d1d9;
+  --ink: #e6edf3;
+  --ink-muted: #7d8590;
+  --accent: #e8a33d;      /* makes, threes, active state */
+  --accent-cold: #4c8bf5; /* misses */
+  --radius: 6px;
+
+  --font-display: 'Teko', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  min-height: 100%;
+  height: 100%;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+select, button, input {
+  font-family: var(--font-mono);
+  color: var(--ink);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

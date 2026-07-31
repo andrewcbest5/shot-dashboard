@@ -1,26 +1,27 @@
-<table class="summary-table">
-  <thead>
-    <tr>
-      <th>Stat</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Attempts</td>
-      <td>{{ stats().attempts }}</td>
-    </tr>
-    <tr>
-    <td>FG%</td>
-    <td>{{ stats().fgPct !== null ? (stats().fgPct! * 100).toFixed(1) + '%' : '—' }} ({{ stats().makes }}/{{ stats().attempts }})</td>
-    </tr>
-    <tr>
-      <td>3PT%</td>
-      <td>{{ stats().threePct !== null ? (stats().threePct! * 100).toFixed(1) + '%' : '—' }} ({{ stats().threeMakes }}/{{ stats().threeAttempts }})</td>
-    </tr>
-    <tr>
-      <td>eFG%</td>
-      <td>{{ stats().efgPct !== null ? (stats().efgPct! * 100).toFixed(1) + '%' : '—' }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="panel">
+  <h2 class="panel-title">Summary</h2>
+  <dl class="stat-list">
+    <div class="stat-row">
+      <dt>Attempts</dt>
+      <dd>{{ stats().attempts }}</dd>
+    </div>
+    <div class="stat-row">
+      <dt>FG%</dt>
+      <dd>
+        {{ stats().fgPct !== null ? (stats().fgPct! * 100).toFixed(1) + '%' : '—' }}
+        <span class="stat-detail">({{ stats().makes }}/{{ stats().attempts }})</span>
+      </dd>
+    </div>
+    <div class="stat-row">
+      <dt>3PT%</dt>
+      <dd>
+        {{ stats().threePct !== null ? (stats().threePct! * 100).toFixed(1) + '%' : '—' }}
+        <span class="stat-detail">({{ stats().threeMakes }}/{{ stats().threeAttempts }})</span>
+      </dd>
+    </div>
+    <div class="stat-row">
+      <dt>eFG%</dt>
+      <dd>{{ stats().efgPct !== null ? (stats().efgPct! * 100).toFixed(1) + '%' : '—' }}</dd>
+    </div>
+  </dl>
+</div>

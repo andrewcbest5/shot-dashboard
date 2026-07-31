@@ -1,6 +1,8 @@
-<div class="filter-panel">
-  <label>
-    Player
+<div class="panel">
+  <h2 class="panel-title">Filters</h2>
+
+  <label class="field">
+    <span class="field-label">Player</span>
     <select (change)="onPlayerChange($event)">
       <option value="">All players</option>
       @for (player of players(); track player.id) {
@@ -9,8 +11,8 @@
     </select>
   </label>
 
-  <label>
-    Shot type
+  <label class="field">
+    <span class="field-label">Shot type</span>
     <select (change)="onComplexShotTypeChange($event)">
       <option value="">All shot types</option>
       @for (type of complexShotTypes; track type) {
@@ -19,8 +21,8 @@
     </select>
   </label>
 
-  <label>
-    Contest level
+  <label class="field">
+    <span class="field-label">Contest level</span>
     <select (change)="onContestLevelChange($event)">
       <option value="">All contest levels</option>
       @for (level of contestLevels; track level) {
@@ -29,10 +31,10 @@
     </select>
   </label>
 
-  <label>
+  <label class="field checkbox-field">
     <input type="checkbox" (change)="onCatchAndShootChange($event)" />
-    Catch and shoot only
+    <span class="field-label">Catch and shoot only</span>
   </label>
 
-  <button (click)="onReset()">Reset filters</button>
+  <button class="reset-btn" (click)="onReset()">Reset filters</button>
 </div>

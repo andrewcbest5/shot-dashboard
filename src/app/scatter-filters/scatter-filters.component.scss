@@ -1,0 +1,66 @@
+// scatter-filters.component.scss
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+
+.panel-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;   // was 14px
+}
+
+.field-label {
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+select {
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 4px 6px;      // was 7px 8px
+  font-size: 12px;
+  font-family: var(--font-display); // or whatever font you want here
+}
+
+.checkbox-field {
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+
+  .field-label {
+    font-size: 12px;
+    color: var(--ink);
+  }
+}
+
+.reset-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--ink-muted);
+  padding: 5px;           // was 8px
+  font-size: 11px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  margin-top: 4px;
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}
