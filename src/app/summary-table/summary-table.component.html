@@ -1,0 +1,26 @@
+<table class="summary-table">
+  <thead>
+    <tr>
+      <th>Stat</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Attempts</td>
+      <td>{{ stats().attempts }}</td>
+    </tr>
+    <tr>
+    <td>FG%</td>
+    <td>{{ stats().fgPct !== null ? (stats().fgPct! * 100).toFixed(1) + '%' : '—' }} ({{ stats().makes }}/{{ stats().attempts }})</td>
+    </tr>
+    <tr>
+      <td>3PT%</td>
+      <td>{{ stats().threePct !== null ? (stats().threePct! * 100).toFixed(1) + '%' : '—' }} ({{ stats().threeMakes }}/{{ stats().threeAttempts }})</td>
+    </tr>
+    <tr>
+      <td>eFG%</td>
+      <td>{{ stats().efgPct !== null ? (stats().efgPct! * 100).toFixed(1) + '%' : '—' }}</td>
+    </tr>
+  </tbody>
+</table>
