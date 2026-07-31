@@ -39,8 +39,7 @@ Navigate to:
 ```
 http://localhost:4200
 ```
-
-
+![Alt text](/public/screenshot.jpg)
 
 # Tech Stack
 
